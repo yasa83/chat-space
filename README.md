@@ -28,12 +28,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
 
 ### Association
-- has_many :groups
-
+has_many :tweets
+has_many :members
 
 ## groupsテーブル
 
@@ -42,7 +40,8 @@ Things you may want to cover:
 |name|string|null: false, index: true|
 
 ### Association
-- has_many :users
+has_many :members
+has_many :tweets
 
 
 ## membersテーブル
@@ -53,8 +52,8 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- belongs_to :user
+belongs_to :group
+belongs_to :user
 
 
 ## tweetsテーブル
@@ -68,8 +67,8 @@ Things you may want to cover:
 |created_time|datetime|null: false|
 
 ### Association
-- belongs_to :user
-- belongs_to :group
+belongs_to :user
+belongs_to :group
 
 
 
