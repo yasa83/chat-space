@@ -31,9 +31,18 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 |password|string|null: false|
 
-
 ### Association
 - has_many :groups
+
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+
+### Association
+- has_many :users
 
 
 ## membersテーブル
