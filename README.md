@@ -32,6 +32,7 @@ Things you may want to cover:
 ### Association
 has_many :tweets
 has_many :members
+has_many :groups, through:groups
 
 ## groupsテーブル
 
@@ -42,6 +43,7 @@ has_many :members
 ### Association
 has_many :members
 has_many :tweets
+has_many :users, through:users
 
 
 ## membersテーブル
