@@ -23,6 +23,19 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+
+
+### Association
+- has_many :groups
+
+
 ## membersテーブル
 
 |Column|Type|Options|
@@ -33,5 +46,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
 
 
