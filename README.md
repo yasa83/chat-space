@@ -53,8 +53,23 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- has_many :groups
 - belongs_to :user
+
+
+## tweetsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null:false|
+|image|string| |
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|created_time|datetime|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :group
 
 
 
