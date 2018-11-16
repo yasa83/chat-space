@@ -30,9 +30,10 @@ Things you may want to cover:
 |name|string|null: false, index: true|
 
 ### Association
-has_many :tweets
 has_many :members
-has_many :groups, through:groups
+has_many :groups, through: :members
+has_many :comments
+
 
 ## groupsテーブル
 
@@ -42,8 +43,8 @@ has_many :groups, through:groups
 
 ### Association
 has_many :members
-has_many :tweets
-has_many :users, through:users
+has_many :users, through: :members
+has_many :comments
 
 
 ## membersテーブル
@@ -58,7 +59,7 @@ belongs_to :group
 belongs_to :user
 
 
-## tweetsテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
