@@ -69,7 +69,7 @@ belongs_to :user
 |group|references|null: false, foreign_key: true|
 
 ### Association
-belongs_to :user
+belongs_to :user<br>
 belongs_to :group
 
 
