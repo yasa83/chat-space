@@ -30,8 +30,8 @@ Things you may want to cover:
 |name|string|null: false, index: true|
 
 ### Association
-has_many :members
-has_many :groups, through: :members
+has_many :members<br>
+has_many :groups, through: :members<br>
 has_many :comments
 
 
@@ -42,8 +42,8 @@ has_many :comments
 |name|string|null: false, index: true|
 
 ### Association
-has_many :members
-has_many :users, through: :members
+has_many :members<br>
+has_many :users, through: :members<br>
 has_many :comments
 
 
@@ -55,7 +55,7 @@ has_many :comments
 |group|references|null: false, foreign_key: true|
 
 ### Association
-belongs_to :group
+belongs_to :group<br>
 belongs_to :user
 
 
