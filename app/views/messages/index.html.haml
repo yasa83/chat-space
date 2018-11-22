@@ -1,0 +1,19 @@
+.chat-side
+  .chat-side__user
+    .chat-side__user-content
+      .chat-side__user-name
+        田中 太郎
+      %a.chat-side__user-new-group( href='/groups/new' )
+        %i.fa.fa-pencil-square-o
+      %a.chat-side__user--edit-user( href='users/edit')
+        %i.fa.fa-cog
+  .chat-side__groups
+    .chat-side__groups-list
+      %a( href='groups/id/messages')
+      .chat-side__group
+      .chat-side__group-name
+        サンプルグループ
+      .chat-side__group-message
+        メッセージはまだありません
+
+
