@@ -8,13 +8,6 @@
   padding: 0;
 }
 
-.chat-space__info{
-  width: 100%;
-  background: #38a1db;
-  height: 30px;
-  color: #fff;
-  text-align: center;
-}
 
 .chat-side{
   background-color: #2f3e51;
@@ -139,11 +132,11 @@
 .chat-main__bottom--group {
   background-color: #eee;
   position: absolute;
-  bottom: -30px;
   left: 320px;
   width: calc(100%  - 300px);
   height: 90px;
   padding-left: 40px;
+  bottom: 0;
 
 }
 
