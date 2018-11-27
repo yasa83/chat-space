@@ -1,12 +1,12 @@
 .chat-side
-  .chat-side__user.clearfix
+  .chat-side__user
     .chat-side__user-content
       .chat-side__user-name
         田中 太郎
-        %a.chat-side__user-new-group( href='/groups/new' )
-          %i.fa.fa-pencil-square-o.white
         %a.chat-side__user--edit-user( href='users/edit')
           %i.fa.fa-cog.white
+        %a.chat-side__user-new-group( href='/groups/new' )
+          %i.fa.fa-pencil-square.white
   .chat-side__groups
     .chat-side__groups-list
       .chat-side__group
@@ -30,14 +30,14 @@
       .chat-main__header--group-members
         Member:田中太郎  山田花子
   .chat-main__body--message-list
-    .chat-main__message.clearfix(data-id="#")
+    .chat-main__message(data-id="#")
       .chat-main__message-name
         田中太郎
       .chat-main__message-date
         2018/11/23 12:52:17
       .chat-main__message-text
         こんにちは
-    .chat-main__message.clearfix(data-id="#")
+    .chat-main__message(data-id="#")
       .chat-main__message-name
         山田花子
       .chat-main__message-date
