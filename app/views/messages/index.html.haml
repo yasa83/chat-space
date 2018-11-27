@@ -1,26 +1,36 @@
 .chat-space__info
   チャットグループが作成されました
 .chat-side
-  .chat-side__user
+  .chat-side__user.clearfix
     .chat-side__user-content
       .chat-side__user-name
         田中 太郎
       %a.chat-side__user-new-group( href='/groups/new' )
         %i.fa.fa-pencil-square-o
       %a.chat-side__user--edit-user( href='users/edit')
-        %i.fa.fa-cog
+        %i.fa.fa-cog.white
   .chat-side__groups
     .chat-side__groups-list
-      %a( href='groups/id/messages')
       .chat-side__group
+        .chat-side__group-name
+          サンプルグループ
+        .chat-side__group-message
+          こんにちは
+      .chat-side__group
+        .chat-side__group-name
+          サンプルグループ2
+        .chat-side__group-message
+          こんばんは
 
 .chat-main
   .chat-main__header
-    .chat-main__header--group.clearfix
+    .chat-main__header--group
       .chat-main__header--group-name
         サンプルグループ
       %a.chat-main__header--group-edit-btn(href="groups/edit")
         edit
+      .chat-main__header--group-members
+        Member:田中太郎  山田花子
   .chat-main__body--message-list
     .chat-main__message.clearfix(data-id="#")
       .chat-main__message-name
@@ -37,10 +47,10 @@
       .chat-main__message-text
         はじめまして
 
-  .chat-main__bottom--group.clearfix
+  .chat-main__bottom--group
     .chat-main__bottom_textbox
       type a message
-      %i.fa.fa-picture-o
+      %i.far.fa-image.black.fa-pull-right
     %a.chat-main__bottom--group-edit-btn(href="groups/edit")
       send
 
