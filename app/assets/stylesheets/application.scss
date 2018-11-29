@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
 }
-
 .chat-side{
   background-color: #2f3e51;
   height: 100vh;
@@ -44,7 +43,6 @@
       }
   }
 }
-
 .chat-main{
   width: calc(100%-300px);
   .chat-main__header{
@@ -106,9 +104,7 @@
     height: 90px;
     padding-left: 40px;
     bottom: 0;
-
   }
-
   .chat-main__bottom-textbox{
     height: 50px;
     width: calc(100vw - 500px);
