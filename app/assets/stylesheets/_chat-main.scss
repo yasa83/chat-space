@@ -1,15 +1,15 @@
 .chat-main{
   width: calc(100%-300px);
-  .chat-main__header{
+  &__header{
     height: 90px;
     border-bottom: solid 1px #eee;
-    .chat-main__header--group-name{
+      &--group-name{
       font-size: 20px;
       color: #333;
       float: left;
       padding: 19px 2px 4px 41px;
     }
-    .chat-main__header--group-edit-btn{
+      &--group-edit-btn{
       display:inline-block;
       width:100px;
       height: 40px;
@@ -22,7 +22,7 @@
       color: #38a1db;
       text-decoration: none;
     }
-    .chat-main__header--group-members{
+      &--group-members{
       font-size: 15px;
       color: #999999;
       position: relative;
@@ -30,27 +30,27 @@
       left: -160px;
     }
   }
-  .chat-main__body--message-list{
+  &__body--message-list{
     padding: 40px 0 0 40px;
     width: calc(100vw - 300px);
     position: relative;
     left: 40px;
-    .chat-main__message-name{
+    &__message-name{
       font-size: 16px;
       font-weight: bold;
       padding-right:10px;
       float: left;
     }
-    .chat-main__message-date{
+    &__message-date{
       font-size: 12px;
       color: #999999;
     }
-    .chat-main__message-text{
+    &__message-text{
       font-size: 14px;
       padding: 10px 0 40px 0;
     }
   }
-  .chat-main__bottom--group {
+  &__bottom--group {
     background-color: #eee;
     position: absolute;
     left: 320px;
@@ -59,7 +59,7 @@
     padding-left: 40px;
     bottom: 0;
   }
-  .chat-main__bottom-textbox{
+  &__bottom-textbox{
     height: 50px;
     width: calc(100vw - 500px);
     background-color:#fff;
@@ -78,7 +78,7 @@
       left: 900px;
     }
    }
-  .chat-main__bottom--group-edit-btn{
+  &__bottom--group-edit-btn{
     display:inline-block;
     width:100px;
     height: 40px;
