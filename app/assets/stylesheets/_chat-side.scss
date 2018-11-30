@@ -6,12 +6,12 @@
   color: #fff;
   position: relative;
   float: left;
-  .chat-side__user{
+  &__user{
     background-color: #253141;
     height: 90px;
     left: 0;
     width: 320px;
-    .chat-side__user-name{
+    &-name{
       padding:35px 20px 0 20px;
       font-size: 16px;
       font-weight: bold;
@@ -22,7 +22,7 @@
      }
     }
   }
-  .chat-side__groups{
+  &__groups{
     color: #fff;
     .chat-side__group-name{
       font-size: 15px;
