@@ -44,8 +44,6 @@
       .chat-main__body--message-text
         はじめまして
   .chat-main__bottom
-    .chat-main__bottom--textbox
-      type a message
+    %form.chat-main__bottom--textbox{placeholder: "type a message"}
       %i.fa.fa-image.black.fa-pull-right
-    %a.chat-main__bottom--group-edit-btn(href="groups/edit")
-      send
+    %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
