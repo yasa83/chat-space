@@ -1,0 +1,52 @@
+.chat-side
+  .chat-side__user
+    .chat-side__user-content
+      .chat-side__user-name
+        田中 太郎
+        %a.chat-side__user--edit-user-button.white( href='')
+          = fa_icon "edit"
+        %a.chat-side__user--new-group-button.white( href='' )
+          = fa_icon "cog"
+  .chat-side__groups
+    .chat-side__groups-list
+      .chat-side__groups
+        .chat-side__groups-name
+          サンプルグループ
+        .chat-side__groups-message
+          こんにちは
+      .chat-side__groups
+        .chat-side__groups-name
+          サンプルグループ2
+        .chat-side__groups-message
+          こんばんは
+.chat-main
+  .chat-main__header
+    .chat-main__header--group
+      .chat-main__header--group-name
+        サンプルグループ
+      %a.chat-main__header--group-edit-btn(href="groups/edit")
+        edit
+      .chat-main__header--group-members
+        Member:田中太郎  山田花子
+  .chat-main__body
+    .chat-main__body--message(data-id="#")
+      .chat-main__body--message-name
+        田中太郎
+      .chat-main__body--message-date
+        2018/11/23 12:52:17
+      .chat-main__body--message-text
+        こんにちは
+    .chat-main__body--message(data-id="#")
+      .chat-main__body--message-name
+        山田花子
+      .chat-main__body--message-date
+        2018/11/23 12:53:17
+      .chat-main__body--message-text
+        はじめまして
+  .chat-main__bottom
+    %form.chat-main__bottom--form
+      %input.chat-main__bottom--textbox{placeholder: "type a message"}
+      %label.chat-main__bottom-image-upload-button{for: "chat-main__bottom-update-icon"}
+        = fa_icon "image"
+        %input{type: "file", class: "chat-main__bottom-upload-icon"}
+      %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
