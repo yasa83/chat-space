@@ -3,21 +3,21 @@
     .chat-side__user-content
       .chat-side__user-name
         田中 太郎
-        %a.chat-side__user--edit-user( href='users/edit')
-          %i.fa.fa-cog.white
-        %a.chat-side__user-new-group( href='/groups/new' )
-          %i.fa.fa-pencil-square.white
+        %a.chat-side__user--edit-user-button.white( href='')
+          = fa_icon "edit"
+        %a.chat-side__user--new-group-button.white( href='' )
+          = fa_icon "cog"
   .chat-side__groups
     .chat-side__groups-list
-      .chat-side__group
-        .chat-side__group-name
+      .chat-side__groups
+        .chat-side__groups-name
           サンプルグループ
-        .chat-side__group-message
+        .chat-side__groups-message
           こんにちは
-      .chat-side__group
-        .chat-side__group-name
+      .chat-side__groups
+        .chat-side__groups-name
           サンプルグループ2
-        .chat-side__group-message
+        .chat-side__groups-message
           こんばんは
 .chat-main
   .chat-main__header
@@ -44,6 +44,9 @@
       .chat-main__body--message-text
         はじめまして
   .chat-main__bottom
-    %form.chat-main__bottom--textbox{placeholder: "type a message"}
-      %i.fa.fa-image.black.fa-pull-right
-    %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
+    %form.chat-main__bottom--form
+      %input.chat-main__bottom--textbox{placeholder: "type a message"}
+      %label.chat-main__bottom-image-upload-button{for: "chat-main__bottom-update-icon"}
+        = fa_icon "image"
+        %input{type: "file", class: "chat-main__bottom-upload-icon"}
+      %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
