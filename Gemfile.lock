@@ -235,9 +235,13 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+<<<<<<< Updated upstream
   devise
   erb2haml
   font-awesome-rails
+=======
+  erb2haml
+>>>>>>> Stashed changes
   haml-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
