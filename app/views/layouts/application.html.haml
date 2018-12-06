@@ -9,4 +9,5 @@
     = javascript_include_tag 'application', data:{turbolinks: {track: 'reload'}}
 tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render 'layouts/notifications'
     = yield
