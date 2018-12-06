@@ -5,7 +5,7 @@
       %ul.chat-side__user-name
         = current_user.name
         %li.chat-side__user--edit-user-button.white
-          = link_to do
+          = link_to new_group_path do
             = fa_icon 'pencil-square-o', class: 'icon'
         %li.chat-side__user--new-group-button.white
           = link_to edit_user_path(current_user) do
@@ -13,12 +13,10 @@
   .chat-side__groups
     .chat-side__groups-list
       .chat-side__groups
-        .chat-side__groups-name
-          サンプルグループ
-        .chat-side__groups-message
-          こんにちは
-      .chat-side__groups
-        .chat-side__groups-name
-          サンプルグループ2
-        .chat-side__groups-message
-          こんばんは
+        - current_user.groups.each do |group|
+          .group
+            = link_to group_messages_path(group) do
+              .chat-side__groups-name
+                = group.name
+              .chat-side__groups-message
+                メッセージはまだありません。

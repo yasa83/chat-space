@@ -36,10 +36,14 @@
   &-name{
     font-size: 15px;
     margin: 20px 20px 5px 20px;
+    color: $white;
+    text-decoration: none;
   }
   &-message{
     font-size: 11px;
     margin:0 20px 40px 20px;
+    color: $white;
+    text-decoration: none;
   }
   }
 }
