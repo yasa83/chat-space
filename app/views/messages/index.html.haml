@@ -1,24 +1,4 @@
-.chat-side
-  .chat-side__user
-    .chat-side__user-content
-      .chat-side__user-name
-        = current_user.name
-        %a.chat-side__user--edit-user-button.white( href='')
-          = fa_icon "edit"
-        %a.chat-side__user--new-group-button.white( href='' )
-          = fa_icon "cog"
-  .chat-side__groups
-    .chat-side__groups-list
-      .chat-side__groups
-        .chat-side__groups-name
-          サンプルグループ
-        .chat-side__groups-message
-          こんにちは
-      .chat-side__groups
-        .chat-side__groups-name
-          サンプルグループ2
-        .chat-side__groups-message
-          こんばんは
+= render '/shared/side_bar'
 .chat-main
   .chat-main__header
     .chat-main__header--group
