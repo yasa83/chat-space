@@ -2,7 +2,7 @@
   .chat-side__user
     .chat-side__user-content
       .chat-side__user-name
-        田中 太郎
+        = current_user.name
         %a.chat-side__user--edit-user-button.white( href='')
           = fa_icon "edit"
         %a.chat-side__user--new-group-button.white( href='' )
