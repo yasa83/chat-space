@@ -31,7 +31,7 @@ Things you may want to cover:
 
 ### Association
 has_many :members<br>
-has_many :groups, through: :members<br>
+has_many :groups, through: :group_users<br>
 has_many :comments
 
 
@@ -43,11 +43,11 @@ has_many :comments
 
 ### Association
 has_many :members<br>
-has_many :users, through: :members<br>
+has_many :users, through: :group_users<br>
 has_many :comments
 
 
-## membersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
