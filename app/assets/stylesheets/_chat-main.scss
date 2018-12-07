@@ -1,8 +1,18 @@
+.wrapper{
+  widows: 100vw;
+  height: 100vh;
+}
 .chat-main{
-  width: calc(100vw-320px);
+  width: calc(100vw - 300px);
+  height: 100vh;
+  position: absolute;
+  left: 300px;
   &__header{
-    height: 90px;
+    height: 96px;
+    width: calc(100vw - 300px);
     border-bottom: solid 1px #eee;
+    position: relative;
+    top: 0;
     &--group-name{
       font-size: 20px;
       color: #333;
@@ -27,14 +37,17 @@
       color: $light-gray;
       position: relative;
       top: 50px;
-      left: -160px;
+      left: -78px;
     }
   }
   &__body{
-    padding: 40px 0 0 40px;
+    height: calc(100vh - 180px);
     width: calc(100vw - 300px);
     position: relative;
-    left: 40px;
+    overflow: scroll;
+    &--message{
+      margin: 40px;
+    }
     &--message-name{
       font-size: 16px;
       font-weight: bold;
@@ -50,13 +63,11 @@
       padding: 10px 0 40px 0;
     }
   }
-  &__bottom{
+  &__bottom--form{
     background-color: #eee;
     position: absolute;
-    left: 320px;
-    width: calc(100%  - 300px);
     height: 90px;
-    padding-left: 40px;
+    width: 100%;
     bottom: 0;
     &--textbox{
     height: 50px;
@@ -67,10 +78,12 @@
     color: $dark-gray;
     display: flex;
     align-items: center; /* 縦方向中央揃え */
+    margin-left: 30px;
    }
-  & .fa-image{
+  & .icon{
     position: relative;
     left: -50px;
+    top: 35px;
   }
   &-upload-icon{
     display: none;
@@ -78,7 +91,7 @@
   &--group-edit-btn{
     height: 50px;
     width: 80px;
-    margin: 20px 0 20px 10px ;
+    margin: 0 0 20px 30px ;
     background-color: $sky-blue;
     text-align: center;
     color: #fff;

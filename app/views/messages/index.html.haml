@@ -1,32 +1,23 @@
-= render '/shared/side_bar'
-.chat-main
-  .chat-main__header
-    .chat-main__header--group
-      .chat-main__header--group-name
-        サンプルグループ
-      %a.chat-main__header--group-edit-btn(href="groups/edit")
-        edit
-      .chat-main__header--group-members
-        Member:田中太郎  山田花子
-  .chat-main__body
-    .chat-main__body--message(data-id="#")
-      .chat-main__body--message-name
-        田中太郎
-      .chat-main__body--message-date
-        2018/11/23 12:52:17
-      .chat-main__body--message-text
-        こんにちは
-    .chat-main__body--message(data-id="#")
-      .chat-main__body--message-name
-        山田花子
-      .chat-main__body--message-date
-        2018/11/23 12:53:17
-      .chat-main__body--message-text
-        はじめまして
-  .chat-main__bottom
-    %form.chat-main__bottom--form
-      %input.chat-main__bottom--textbox{placeholder: "type a message"}
-      %label.chat-main__bottom-image-upload-button{for: "chat-main__bottom-update-icon"}
-        = fa_icon "image"
-        %input{type: "file", class: "chat-main__bottom-upload-icon"}
-      %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
+.wrapper
+  = render '/shared/side_bar'
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        .chat-main__header--group-name
+          = @group.name
+        %a.chat-main__header--group-edit-btn(href="groups/edit")
+          edit
+        .chat-main__header--group-members
+          Member:
+          - @group.users.each do|user|
+            = user.name
+    .chat-main__body
+      = render @messages
+    .chat-main__bottom--form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat-main__bottom--form--textbox', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'chat-main__bottom--form-upload-icon hidden'
+        = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
