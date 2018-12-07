@@ -1,22 +1,23 @@
-= render '/shared/side_bar'
-.chat-main
-  .chat-main__header
-    .chat-main__header--group
-      .chat-main__header--group-name
-        = @group.name
-      %a.chat-main__header--group-edit-btn(href="groups/edit")
-        edit
-      .chat-main__header--group-members
-        Member:
-        - @group.users.each do|user|
-          = user.name
-  .chat-main__body
-    = render @messages
-  .chat-main__bottom--form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'chat-main__bottom--form--textbox', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'chat-main__bottom--form-upload-icon hidden'
-      = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
+.wrapper
+  = render '/shared/side_bar'
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        .chat-main__header--group-name
+          = @group.name
+        %a.chat-main__header--group-edit-btn(href="groups/edit")
+          edit
+        .chat-main__header--group-members
+          Member:
+          - @group.users.each do|user|
+            = user.name
+    .chat-main__body
+      = render @messages
+    .chat-main__bottom--form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat-main__bottom--form--textbox', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'chat-main__bottom--form-upload-icon hidden'
+        = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
