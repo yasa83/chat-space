@@ -50,7 +50,7 @@
       padding: 10px 0 40px 0;
     }
   }
-  &__bottom{
+  &__bottom--form{
     background-color: #eee;
     position: absolute;
     left: 320px;
@@ -68,9 +68,10 @@
     display: flex;
     align-items: center; /* 縦方向中央揃え */
    }
-  & .fa-image{
+  & .icon{
     position: relative;
     left: -50px;
+    top: 35px;
   }
   &-upload-icon{
     display: none;
@@ -78,7 +79,7 @@
   &--group-edit-btn{
     height: 50px;
     width: 80px;
-    margin: 20px 0 20px 10px ;
+    margin: 0 0 20px 30px ;
     background-color: $sky-blue;
     text-align: center;
     color: #fff;

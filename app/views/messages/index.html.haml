@@ -23,10 +23,11 @@
         2018/11/23 12:53:17
       .chat-main__body--message-text
         はじめまして
-  .chat-main__bottom.form
-    %form.chat-main__bottom--form
-      %input.chat-main__bottom--textbox{placeholder: "type a message"}
-      %label.chat-main__bottom-image-upload-button{for: "chat-main__bottom-update-icon"}
-        = fa_icon "image"
-        %input{type: "file", class: "chat-main__bottom-upload-icon"}
-      %input.chat-main__bottom--group-edit-btn{type: "submit", value: "Send"}
+  .chat-main__bottom--form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat-main__bottom--form--textbox', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'chat-main__bottom--form-upload-icon hidden'
+      = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
