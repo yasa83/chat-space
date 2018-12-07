@@ -1,5 +1,6 @@
 .chat-main{
   width: calc(100vw-320px);
+  height: 100vh;
   &__header{
     height: 90px;
     border-bottom: solid 1px #eee;
@@ -27,7 +28,7 @@
       color: $light-gray;
       position: relative;
       top: 50px;
-      left: -160px;
+      left: -78px;
     }
   }
   &__body{
