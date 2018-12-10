@@ -24,7 +24,6 @@ RSpec.describe Message, type: :model do
       end
 
       it 'is invalid without group_id' do
-binding.pry
         message = build(:message, group_id: nil)
         message.valid?
         expect(message.errors[:group]).to include('を入力してください')
