@@ -5,7 +5,7 @@
       .chat-main__header--group
         .chat-main__header--group-name
           = @group.name
-        / = link_to "Edit", edit_group_path, method: :GET, class: 'chat-main__header--group-edit-btn'
+        = link_to "Edit", '/edit}', method: :GET, class: 'chat-main__header--group-edit-btn'
         .chat-main__header--group-members
           Member:
           - @group.users.each do|user|
