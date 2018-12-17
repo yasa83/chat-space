@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message){
+    var message_image = message.image ? message.image : ""
     var html = `<div class="chat-main__body--message">
                   <div class="chat-main__body--message-name">
                     ${message.user_name}
@@ -11,7 +12,7 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-                    <image class: 'lower-message__image' src='${message.image}'>
+                    <image class: 'lower-message__image' src='${message_image}'>
                   </div>
                 </div>`
     return html;
@@ -20,7 +21,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    var always = function(){$('.form__submit').prop("disabled", false)};
     $.ajax({
       url: url,
       type: "POST",
@@ -34,11 +34,12 @@ $(function(){
       $('.chat-main__body').append(html);
       $('.chat-main__bottom--form--textbox, #message_image').val('');
       $('.chat-main__body--message').animate({scrollTop: $('.chat-main__body--message').get(0).scrollHeight}, 'slow');
-      always();
     })
     .fail(function(message){
       alert('メッセージか画像を入力してください。');
-      always();
+    })
+    .always(function(){
+       $('.form__submit').prop("disabled", false);
     });
   });
 });
