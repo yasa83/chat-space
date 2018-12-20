@@ -18,6 +18,7 @@ $(function() {
                   <p class='chat-group-user__name'>${user_name}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`
+    $("#chat-group-users").append(html);
   }
 
   $("#user-search-field").on("keyup", function() {
@@ -49,7 +50,7 @@ $(function() {
     var user_id = $(this).attr("data-user-id");
     var user_name = $(this).attr("data-user-name");
     addUserToGroup(user_id, user_name);
-    // $(this).parent().remove();
+    $(this).parent().remove();
   });
 
   $("chat-group-users").on("click", ".user-search-remove",function(){
