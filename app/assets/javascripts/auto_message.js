@@ -1,6 +1,9 @@
 $(function(){
   function buildHTML(message) {
-    var message_image = message.image ? message.image : ""
+    var message_image = ""
+    if(message.image)
+       {var message_image = `<img class="lower-message__image" src="${message.image}" >`
+     }
     var html = `<div class="chat-main__body--message" data-message-id="${message.id}">
                   <div class="chat-main__body--message-name">
                     ${message.name}
@@ -14,6 +17,7 @@ $(function(){
                     </p>
                     <image class: 'lower-message__image' src='${message_image}'>
                   </div>
+                   ${message_image}
                 </div>`
     return html;
   }
@@ -31,6 +35,7 @@ $(function(){
               json.messages.forEach(function(autoMessage){
                var html = buildHTML(autoMessage);
                $('.chat-main__body').append(html);
+               $('.chat-main__body--message').animate({scrollTop: $('.chat-main__body--message').get(0).scrollHeight}, 'slow');
              })
            }
          })
