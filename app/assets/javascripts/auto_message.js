@@ -1,10 +1,9 @@
 $(function(){
   function buildHTML(message) {
     var message_image = ""
-    if(message.image)
-       {var message_image = `<img class="lower-message__image" src="${message.image}" >`
-     }
-    var html = `<div class="chat-main__body--message" data-message-id="${message.id}">
+      if(message.image)
+       {var message_image = message.image}
+    var html = `<div class="chat-main__body--message"  data-message-id="${message.id}">
                   <div class="chat-main__body--message-name">
                     ${message.name}
                   </div>
@@ -15,15 +14,15 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-                    <image class: 'lower-message__image' src='${message_image}'>
+                    <img class: 'lower-message__image' src='${message_image}'>
                   </div>
-                   ${message_image}
                 </div>`
     return html;
   }
   var Interval = setInterval(function(){
       if (location.href.match(/\/groups\/\d+\/messages/)){
           lastMessageId = $(".chat-main__body--message:last").data("message-id") || 0
+          console.log(lastMessageId)
           $.ajax({
            type: "get",
            url: location.href,
@@ -40,5 +39,5 @@ $(function(){
            }
          })
       }
-    }, 5000);
+    }, 10000);
 });
