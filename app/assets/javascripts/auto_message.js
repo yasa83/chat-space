@@ -1,8 +1,6 @@
 $(function(){
   function buildHTML(message) {
-    var message_image = ""
-      if(message.image)
-       {var message_image = message.image}
+    var message_image = (message.image) ? `<img class: 'lower-message__image' src='${message.image}'>` : "";
     var html = `<div class="chat-main__body--message"  data-message-id="${message.id}">
                   <div class="chat-main__body--message-name">
                     ${message.name}
@@ -14,7 +12,7 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-                    <img class: 'lower-message__image' src='${message_image}'>
+                    ${message_image}
                   </div>
                 </div>`
     return html;
@@ -22,7 +20,6 @@ $(function(){
   var Interval = setInterval(function(){
       if (location.href.match(/\/groups\/\d+\/messages/)){
           lastMessageId = $(".chat-main__body--message:last").data("message-id") || 0
-          console.log(lastMessageId)
           $.ajax({
            type: "get",
            url: location.href,
@@ -39,5 +36,5 @@ $(function(){
            }
          })
       }
-    }, 10000);
+    }, 5000);
 });
