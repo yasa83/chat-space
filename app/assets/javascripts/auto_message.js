@@ -17,28 +17,23 @@ $(function(){
                 </div>`
     return html;
   }
-
-  var interval = setInterval(function() {
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-    $.ajax({
-      url: location.href.json,
-    })
-    .done(function(json) {
-      var id = $('chat-main__body--message').data('messageId');
-      var insertHTML = '';
-      json.messages.forEach(function(message) {
-        if (message.id > id ) {
-          insertHTML += buildHTML(message);
-        }
-      });
-      $('.chat-main__body').append(insertHTML);
-    })
-    .fail(function(json) {
-      alert('自動更新に失敗しました');
-    });
-  } else {
-    clearInterval(interval);
-   }} , 5 * 1000 );
-
-
+  var Interval = setInterval(function(){
+      if (location.href.match(/\/groups\/\d+\/messages/)){
+          lastMessageId = $(".chat-main__body--message:last").data("message-id") || 0
+          $.ajax({
+           type: "get",
+           url: location.href,
+           data: {lastMessageId: lastMessageId},
+           dataType: "json"
+         })
+         .done(function(json){
+           if (json.length != 0){
+              json.messages.forEach(function(autoMessage){
+               var html = buildHTML(autoMessage);
+               $('.chat-main__body').append(html);
+             })
+           }
+         })
+      }
+    }, 5000);
 });
