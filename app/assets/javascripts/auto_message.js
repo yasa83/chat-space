@@ -14,6 +14,7 @@ $(function(){
                     </p>
                   </div>
                 </div>`
+    if(message.image){
       return html + message_image;
     }else{
       return html;
