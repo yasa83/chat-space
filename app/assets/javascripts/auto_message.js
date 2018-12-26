@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message) {
-    var message_image = (message.image) ? `<img class: 'lower-message__image' src='${message.image}'>` : "";
+    var message_image = `<img class: 'lower-message__image' src='${message.image}'>`
     var html = `<div class="chat-main__body--message"  data-message-id="${message.id}">
                   <div class="chat-main__body--message-name">
                     ${message.name}
@@ -12,10 +12,12 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-                    ${message_image}
                   </div>
                 </div>`
-    return html;
+      return html + message_image;
+    }else{
+      return html;
+    }
   }
   var Interval = setInterval(function(){
       if (location.href.match(/\/groups\/\d+\/messages/)){

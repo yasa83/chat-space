@@ -15,7 +15,6 @@ $(function(){
                     <img class: 'lower-message__image' src='${message_image}'>
                   </div>
                 </div>`
-
     return html;
   }
   $('#new_message').on('submit', function(e){
