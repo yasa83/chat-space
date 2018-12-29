@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message) {
+    var message_image = ""
     if(message.image){
       var message_image = `<img class: 'lower-message__image' src='${message.image}'>`
     }
@@ -23,7 +24,7 @@ $(function(){
       if (location.href.match(/\/groups\/\d+\/messages/)){
           lastMessageId = $(".chat-main__body--message:last").data("message-id") || 0
           $.ajax({
-           type: "get",
+           type: "GET",
            url: location.href,
            data: {lastMessageId: lastMessageId},
            dataType: "json"

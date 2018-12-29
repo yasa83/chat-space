@@ -74,3 +74,6 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem "jquery-rails"
 
+group :production do
+  gem 'unicorn'
+end
