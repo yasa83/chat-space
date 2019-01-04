@@ -30,5 +30,4 @@ public/uploads/*
 app/helpers/
 test/
 
-/config/credentials.yml.enc
 
