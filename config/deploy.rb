@@ -44,6 +44,7 @@ set :default_env, {
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
   AWS_ACCESS_KEY_ID: Rails.application.credentials.aws_access_key_id,
   AWS_SECRET_ACCESS_KEY: Rails.application.credentials.aws_secret_access_key,
+}
 set :linked_files, %w{config/master.key}
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
